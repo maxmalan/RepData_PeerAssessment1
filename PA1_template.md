@@ -64,7 +64,7 @@ tail(activity.full)
 ggplot(activity.full, aes(date, steps)) + geom_bar(stat = "identity", width = 0.8, colour = "orange", fill = "orange" ) + labs(title = "Total Number of Steps Taken Each Day", x = "Date", y = "Total Number of Steps") + facet_grid(.~month, scales = "free_x")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-3-1.png)<!-- -->
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png)
 
 
 * Calculate and report the mean and median total number of steps taken per day.
@@ -103,7 +103,7 @@ names(avg.stepsactivity)[2] <- "mean.steps"
 ggplot(avg.stepsactivity, aes(interval, mean.steps)) + geom_line(size = 0.8, colour = "orange") + labs(title = "Average Steps Taken per 5-Minute Interval", x="5 Minutes Interval", y="Steps Taken (Avg)")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png)
 
 ```r
 avg.stepsactivity[avg.stepsactivity$mean.steps == max(avg.stepsactivity$mean.steps), ]
@@ -148,7 +148,7 @@ for (i in 1:nrow(activity.new)) {
 ggplot(activity.new, aes(date, steps)) + geom_bar(stat = "identity", width = 0.8, colour = "orange", fill = "orange" ) + labs(title = "Total Number of Steps Taken Each Day (Imputing Missing Values", x = "Date", y = "Total Number of Steps") + facet_grid(.~month, scales = "free_x")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-7-1.png)
 
 
 * Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
@@ -229,5 +229,5 @@ xyplot(avgstepsactivity.new$meansteps.new ~ avgstepsactivity.new$interval | avgs
        xlab = "Interval", ylab = "Number of Steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-10-1.png)<!-- -->
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-10-1.png)
 
